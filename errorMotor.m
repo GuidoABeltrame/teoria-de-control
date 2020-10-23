@@ -1,5 +1,6 @@
 %Lugar de raices del motor de corriente continua tomando la posicion como salida
 pkg load control
+
 clear all
 close all
 hold off
@@ -22,4 +23,5 @@ num = [k];
 den = conv([J B 0], [L R]);
 pos = tf(num, den)
 
+roots(den)      % Polos de G*H
 rlocus(pos*kr)  % Recibe G*H
